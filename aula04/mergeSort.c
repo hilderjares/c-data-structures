@@ -64,7 +64,7 @@ int main(int argc, char const *argv[]) {
   for(int i = 0; i < size; i++) 
     vetor[i] = size - i + 1;
   
-  mergeSort(vetor, 0, size);
+  mergeSort(vetor, 0, size - 1);
 
   printVetor(vetor, 0, size); 
   
