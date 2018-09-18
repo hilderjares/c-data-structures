@@ -29,7 +29,7 @@ void merge(int *vetor, int lim_inferior, int meio, int lim_superior) {
   vetor_esquerda[k] = 1000000;  // Infinito
 
   j = 0; k = 0;
-  for(int i = meio; i <= lim_superior; i++) {
+  for(int i = lim_inferior; i <= lim_superior; i++) {
     if(vetor_direita[j] < vetor_esquerda[k]) {
         vetor[i] = vetor_direita[j];
         j++;
