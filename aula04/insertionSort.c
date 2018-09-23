@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * insertionSort(int *vetor, int length)
-{
+int * insertionSort(int *vetor, int length) {
 	int aux, j;
-	for (int i = 1; i < length; ++i)
-	{
+	for (int i = 1; i < length; ++i) {
 		j = i;
-		while(vetor[j - 1] > vetor[j] && j > 0)
-		{	
+		while(vetor[j - 1] > vetor[j] && j > 0) {	
 			//if (j > 0) break;
 			aux = vetor[j - 1];
 			vetor[j - 1] = vetor[j];
@@ -19,8 +16,7 @@ int * insertionSort(int *vetor, int length)
 	return vetor;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
 	int *vetor, length = 5;
 
 	vetor = (int *) malloc(length * sizeof(int));
