@@ -1,22 +1,22 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-int *fibonacci_vetor;
+unsigned int *fibonacci_vetor;
 
-int fatorial(int n) {
+unsigned int fatorial(int n) {
 	if (n == 0) {
 		return 1;
 	}
 	return  n * fatorial(n - 1);
 }
 
-int fibonacci(int n) {
+unsigned int fibonacci(int n) {
 	if (n == 0) return 0;
 	if (n == 1) return 1;
 	return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-int fibonacci_recursivo_melhorado(int n) {
+unsigned int fibonacci_recursivo_melhorado(int n) {
 	if (n == 0) {
 		fibonacci_vetor[0] = 0;
 		return fibonacci_vetor[0];
@@ -32,9 +32,9 @@ int fibonacci_recursivo_melhorado(int n) {
 	return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-int fibonacci_iterativo(int n) {	
-	int resultado;
-	int *fibonacci_iterativo = (int *) malloc(n *sizeof(int));
+unsigned int fibonacci_iterativo(int n) {	
+	unsigned int resultado;
+	unsigned int *fibonacci_iterativo = (int *) malloc(n *sizeof(int));
 
 	fibonacci_iterativo[0] = 0;
 	fibonacci_iterativo[1] = 1;
