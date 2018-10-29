@@ -16,7 +16,6 @@ typedef struct ListaEncadeada ListaEnc;
 
 
 ListaEnc criarLista() {
-
    ListaEnc L;
    L.card = 0;
    L.cabeca.prox = NULL;
@@ -41,6 +40,30 @@ void listar(ListaEnc *L) {
 	}
 }
 
+void listar_rec(NO *p) {
+   	if (p != NULL) {
+      	printf("%i\n", p->chave);
+      	listar_rec(p->prox);
+   	}
+}
+
+void listar_invertido(NO *node){
+    if(node != NULL){
+         listar_invertido(node->prox);
+         printf("%d\n", node->chave);
+    }
+}
+
+int numerosDeNodes(NO* cabeca) { 
+    int count = 0;  
+    NO* p = cabeca;
+    while (p != NULL) { 
+        count++; 
+        p = p->prox; 
+    } 
+    return count; 
+} 
+
 int main() {
 	
 	ListaEnc lista = criarLista();
@@ -51,6 +74,11 @@ int main() {
 	lista = incluir(lista, 9);
 
 	listar(&lista);
+	printf("\n");
+	listar_rec(&lista.cabeca);
+	printf("\n");
+	listar_invertido(&lista.cabeca);
+	printf("\n%i\n", numerosDeNodes(&lista.cabeca));
 
 	return 0;
 }
